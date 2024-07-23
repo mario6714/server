@@ -3,7 +3,7 @@ const request = require('../request');
 const { getManagedCacheStorage } = require('../cache');
 
 const track = (info) => {
-	// Credit: This API is provided by GD studio (music.gdstudio.xyz).
+	// Credit: This API is provided by GD studio (music.gdstudio.xyz)..
 	const url =
 		'https://music-api.gdstudio.xyz/api.php?types=url&source=netease&id=' +
 		info.id +
