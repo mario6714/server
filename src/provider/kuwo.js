@@ -61,10 +61,10 @@ const search = (info) => {
 //("http://bd-api.kuwo.cn/api/play/music/v2/audioUrl?&br="+["2000kflac","320kmp3"].slice(o.ENABLE_FLAC?0:1)[0]+"&musicId="+e+"&timestamp=")
 const track = (id) => {
 	const url = crypto.kuwoapi
-		? 'http://bd-api.kuwo.cn/api/play/music/v2/audioUrl?&br=' +
-		['flac', 'mp3']
-		.slice(select.ENABLE_FLAC ? 0 : 1)
-		.join('|') +
+		? 'http://bd-api.kuwo.cn/api/play/music/v2/audioUrl?&br=2000kflac' +
+		//['flac', 'mp3']
+		//.slice(select.ENABLE_FLAC ? 0 : 1)
+		//.join('|') +
 		'&musicId=' +
 		 id
 		//? 'http://mobi.kuwo.cn/mobi.s?f=kuwo&q=' +
