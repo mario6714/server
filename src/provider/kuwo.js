@@ -61,15 +61,17 @@ const search = (info) => {
 const track = (id) => {
 	const url = crypto.kuwoapi
 		? 'http://mobi.kuwo.cn/mobi.s?f=kuwo&q=' +
-		crypto.kuwoapi.encryptQuery(
+			crypto.kuwoapi.encryptQuery(
 				'corp=kuwo&source=kwplayer_ar_5.1.0.0_B_jiakong_vh.apk&p2p=1&type=convert_url2&sig=0&format=' +
 					['flac', 'mp3']
 						.slice(select.ENABLE_FLAC ? 0 : 1)
 						.join('|') +
 					'&musicId=' +
 					id
-			):'http://antiserver.kuwo.cn/anti.s?type=convert_url&format=mp3&response=url&rid=MUSIC_' + id; 
-     // flac refuse
+			)
+		: 'http://antiserver.kuwo.cn/anti.s?type=convert_url&format=mp3&response=url&rid=MUSIC_' +
+			id;
+	// flac refuse
 	// : 'http://www.kuwo.cn/url?format=mp3&response=url&type=convert_url3&br=320kmp3&rid=' + id // flac refuse
 
 	return request('GET', url, { 'user-agent': 'okhttp/3.10.0' })
