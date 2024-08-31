@@ -57,7 +57,7 @@ const search = (info) => {
 			const matched = select(list, info);
 			return matched ? matched.id : Promise.reject();
 		});
-}; 
+};
 const track = (id) => {
 	const url = crypto.kuwoapi
 		? 'http://mobi.kuwo.cn/mobi.s?f=kuwo&q=' +
